@@ -55,7 +55,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: #6cacbd;
+	color: #aba3bb;
 	background-color: transparent;
 }
 
@@ -157,7 +157,7 @@ a.nav-item:hover { color: #faf6f0; }
 .post-link {
 	margin-left: 10px;
 	font-size: 110%;
-	color: #5c5075;
+	color: #aba3bb;
 }
 
 #contact-list li .fa,
