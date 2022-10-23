@@ -26,27 +26,73 @@
     //document.getElementById("tabelem-1-1").onclick = function() {};
     function doAction(a, b){
       var base = "tabelem-";
-      var base2 = "<img src = ";
+      var base2 = "<div class = 'inside-wrap'><img src = ";
       if(a==1){
         var temp = base.concat("1-");
         var temp2 = temp.concat(b);
         var filename = temp2.concat(".png");
+
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
-        document.getElementById('first').innerHTML= final;
+
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(1)'> XXXX </div></div>");
+        document.getElementById('first').innerHTML= final3;
         result.first = b;
       }
       if(a==2){
         var temp = base.concat("2-");
         var temp2 = temp.concat(b);
         var filename = temp2.concat(".png");
+
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
-        document.getElementById('second').innerHTML= final;
+
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(2)'> XXXX </div></div>");
+        document.getElementById('second').innerHTML= final3;
         result.second = b;
       }
-      if(a==3){alert("3");}
-      if(a==4){alert("4");}
+      if(a==3){
+        var temp = base.concat("3-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(3)'> XXXX </div></div>");
+        document.getElementById('third').innerHTML= final3;
+        result.third = b;
+      }
+      if(a==4){
+        var temp = base.concat("4-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(4)'> XXXX </div></div>");
+        document.getElementById('fourth').innerHTML= final3;
+        result.fourth = b;
+      }
+    }
+    function removeAction(a){
+      if(a==1){
+        document.getElementById('first').innerHTML="";
+        result.first = 0;
+      }
+      if(a==2){
+        document.getElementById('second').innerHTML="";
+        result.second = 0;
+      }
+      if(a==3){
+        document.getElementById('third').innerHTML="";
+        result.third = 0;
+      }
+      if(a==4){
+        document.getElementById('fourth').innerHTML="";
+        result.fourth = 0;
+      }
     }
   </script>
   <style>
@@ -87,8 +133,8 @@
     }
     .printquad{
       width: 96%;
-      height:21%;
-      margin: 4% 2% 4% 2%;
+      height:20.5%;
+      margin: 4% 2% 3% 2%;
       border: 1px solid #99f;
       border-radius: 5px;
     }
@@ -161,6 +207,19 @@
       overflow:auto;
     }
 
+    .inside-wrap{
+        position: relative;
+    }
+    .inside-wrap img {
+    }
+    .inside-text {
+        text-align: right;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        cursor: pointer;
+    }
+
     .select{
       cursor: pointer;
     }
@@ -185,7 +244,7 @@
       <div id="tab-1" class="tab-content current">
         <span id="tabelem-1-1" class="select" onclick="doAction(1, 1)">설마</br></span>
         <span id="tabelem-1-2" class="select" onclick="doAction(1, 2)">이렇게까지</br></span>
-        <span id="tabelem-1-3" class="select">많은</br></span>
+        <span id="tabelem-1-3" class="select" onclick="doAction(1, 3)">많은</br></span>
         <span id="tabelem-1-4" class="select">요소가</br></span>
         <span id="tabelem-1-5" class="select">들어가진</br></span>
         <span id="tabelem-1-6" class="select">않겠지</br></span>
@@ -204,26 +263,30 @@
       </div>
 
       <div id="tab-2" class="tab-content">
-        <span id="tabelem-1-1" class="select" onclick="doAction(2, 1)">설마2</br></span>
-        <span id="tabelem-1-2" class="select" onclick="doAction(2, 2)">이렇게까지2</br></span>
-        <span id="tabelem-1-3" class="select">많은</br></span>
-        <span id="tabelem-1-4" class="select">요소가</br></span>
-        <span id="tabelem-1-5" class="select">들어가진</br></span>
-        <span id="tabelem-1-6" class="select">않겠지</br></span>
-        <span id="tabelem-1-7" class="select">미안하</br></span>
-        <span id="tabelem-1-8" class="select">다이거</br></span>
-        <span id="tabelem-1-9" class="select">보여주</br></span>
-        <span id="tabelem-1-10" class="select">려고어</br></span>
-        <span id="tabelem-1-11" class="select">그로끌</br></span>
-        <span id="tabelem-1-12" class="select">었다나</br></span>
-        <span id="tabelem-1-13" class="select">루토사</br></span>
-        <span id="tabelem-1-14" class="select">스케싸</br></span>
-        <span id="tabelem-1-15" class="select">움실화</br></span>
-        <span id="tabelem-1-16" class="select">냐가슴</br></span>
-        <span id="tabelem-1-17" class="select">이웅장</br></span>
-        <span id="tabelem-1-18" class="select">해진다</br></span>
+        <span id="tabelem-2-1" class="select" onclick="doAction(2, 1)">설마2</br></span>
+        <span id="tabelem-2-2" class="select" onclick="doAction(2, 2)">이렇게까지2</br></span>
+        <span id="tabelem-2-3" class="select" onclick="doAction(2, 3)">많은2</br></span>
+        <span id="tabelem-2-4" class="select">요소가</br></span>
+        <span id="tabelem-2-5" class="select">들어가진</br></span>
+        <span id="tabelem-2-6" class="select">않겠지</br></span>
+        <span id="tabelem-2-7" class="select">미안하</br></span>
+        <span id="tabelem-2-8" class="select">다이거</br></span>
+        <span id="tabelem-2-9" class="select">보여주</br></span>
+        <span id="tabelem-2-10" class="select">려고어</br></span>
+        <span id="tabelem-2-11" class="select">그로끌</br></span>
+        <span id="tabelem-2-12" class="select">었다나</br></span>
+        <span id="tabelem-2-13" class="select">루토사</br></span>
+        <span id="tabelem-2-14" class="select">스케싸</br></span>
+        <span id="tabelem-2-15" class="select">움실화</br></span>
+        <span id="tabelem-2-16" class="select">냐가슴</br></span>
+        <span id="tabelem-2-17" class="select">이웅장</br></span>
+        <span id="tabelem-2-18" class="select">해진다</br></span>
       </div>
-      <div id="tab-3" class="tab-content">tab content3</div>
+      <div id="tab-3" class="tab-content">
+        <span id="tabelem-3-1" class="select" onclick="doAction(3, 1)">설마3</br></span>
+        <span id="tabelem-3-2" class="select" onclick="doAction(3, 2)">이렇게까지3</br></span>
+        <span id="tabelem-3-3" class="select" onclick="doAction(3, 3)">많은3</br></span>
+      </div>
       <div id="tab-4" class="tab-content">tab content4</div>
     </div>
     <div class = "partition">
