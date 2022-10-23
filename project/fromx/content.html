@@ -35,7 +35,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(1)'> XXXX </div></div>");
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(1)'> X </div></div>");
         document.getElementById('first').innerHTML= final3;
         result.first = b;
       }
@@ -47,7 +47,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(2)'> XXXX </div></div>");
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(2)'> X </div></div>");
         document.getElementById('second').innerHTML= final3;
         result.second = b;
       }
@@ -59,7 +59,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(3)'> XXXX </div></div>");
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(3)'> X </div></div>");
         document.getElementById('third').innerHTML= final3;
         result.third = b;
       }
@@ -71,7 +71,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(4)'> XXXX </div></div>");
+        var final3 = final.concat(" <div class = 'inside-text' onclick='removeAction(4)'> X </div></div>");
         document.getElementById('fourth').innerHTML= final3;
         result.fourth = b;
       }
@@ -151,6 +151,7 @@
       color: #fff;
       float: right;
       text-align: center;
+      
     }
     ul.tabs{
       margin:0px;
@@ -177,8 +178,7 @@
 
     .tab-content{
       display:none;
-      /*height: 100%;*/
-      margin-top: 70px;
+      height: 100%;
       background: #000;
       color: #fff;
       text-align: center;
@@ -190,7 +190,7 @@
     }
     .tab-content.current{
       display: inherit;
-
+      overflow:auto;
     }
 
     .button{
@@ -260,6 +260,7 @@
         <span id="tabelem-1-16" class="select">냐가슴</br></span>
         <span id="tabelem-1-17" class="select">이웅장</br></span>
         <span id="tabelem-1-18" class="select">해진다</br></span>
+        <span id="tabelem-1-19" class="select">over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br>over</br>flow</br>test</br></span>
       </div>
 
       <div id="tab-2" class="tab-content">
