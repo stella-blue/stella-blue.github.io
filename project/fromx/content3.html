@@ -7,6 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
   </head>
   <script>
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                   TAB                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
     $(document).ready(function(){  
       $('ul.tabs li').click(function(){
         var tab_id = $(this).attr('data-tab');
@@ -17,6 +20,9 @@
         $("#"+tab_id).addClass('current');
       })
     })
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                   IMG                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
     let result = {
       first: 0,
       second: 0,
@@ -37,7 +43,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var temp4 = final.concat(" <div class = 'inside-text' onclick='removeAction(1)");
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(1)");
         var final3 = temp4.concat(base3);
         document.getElementById('first').innerHTML= final3;
         result.first = b;
@@ -50,7 +56,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var temp4 = final.concat(" <div class = 'inside-text' onclick='removeAction(2)");
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(2)");
         var final3 = temp4.concat(base3);
         document.getElementById('second').innerHTML= final3;
         result.second = b;
@@ -63,7 +69,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var temp4 = final.concat(" <div class = 'inside-text' onclick='removeAction(3)");
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(3)");
         var final3 = temp4.concat(base3);
         document.getElementById('third').innerHTML= final3;
         result.third = b;
@@ -76,7 +82,7 @@
         var temp3 = base2.concat(filename);
         var final = temp3.concat(">");
 
-        var temp4 = final.concat(" <div class = 'inside-text' onclick='removeAction(4)");
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(4)");
         var final3 = temp4.concat(base3);
         document.getElementById('fourth').innerHTML= final3;
         result.fourth = b;
@@ -100,6 +106,32 @@
         result.fourth = 0;
       }
     }
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                 PRINT                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+    function print(printArea){
+      win = window.open();
+      self.focus();
+      win.document.open();
+      win.document.write('<html><head><title></title><style>');
+      win.document.write('body, td {font-family: Verdana; font-size: 10pt;}\n');
+      win.document.write('.printable{text-align: center; width: 583px; height: 827px;}\n');
+      win.document.write('.printquad{width: 96%; height:20.5%; margin: 4% 2% 3% 2%;}');
+      win.document.write('.printquad img{max-width: 100%; max-height: 100%; display: block;}');
+      win.document.write('</style></head><body>');
+      win.document.write(printArea);
+      remtxt = win.document.getElementsByName('removebutton');
+      var step = 0;
+      for(step = 0; step<4; step++){
+        remtxt[step].innerHTML = "";
+      }
+      win.document.write('</body></html>');
+
+      win.document.close();
+      //window.onload = win.print();
+      //win.close();
+    }
+    
   </script>
   <style>
     .top{
@@ -132,8 +164,8 @@
       margin-left: 20%;
       margin-right: 20%;
       background: #fff;
-      width: 500px;
-      height: 750px;
+      width: 583px;
+      height: 827px;
       border: 1px solid #999;
       box-shadow: 3px 3px 3px gray;
     }
@@ -146,7 +178,8 @@
     }
     .printquad img{
       max-width: 100%;
-      height: auto;
+      max-height: 100%;
+      /*height: auto;*/
       display: block;
     }
     .sidebar{
@@ -216,8 +249,7 @@
     .inside-wrap{
         position: relative;
     }
-    .inside-wrap img {
-    }
+
     .inside-text {
         text-align: right;
         position: absolute;
@@ -233,7 +265,7 @@
     a:visited {color: #000; text-decoration: none;}
     a:hover {color: #000; text-decoration: none;}
     a:active {color: #000; text-decoration: none;}
-
+    h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }
   </style>
   <body style = "margin: 0; background: #EEE;">
     <div class = "top">
@@ -272,16 +304,17 @@
       </div>
       <div id="tab-4" class="tab-content"><div style="padding: 20px">tab content4</div></div>
     </div>
-    <div class = "partition">
+    <div id = "printArea" class = "partition">
       <div class = "printable"> 
          <div id = "first" class = "printquad"></div> 
          <div id = "second" class = "printquad"></div> 
          <div id = "third" class = "printquad"></div> 
-         <div id = "fourth" class = "printquad"></div> 
+         <div id = "fourth" class = "printquad"></div>
+         <div style = "text-align: left; padding-left: 10px;"> Copyright 어쩌구저쩌구 </div>
       </div>
     </div>    
 
-
+    <div onclick="print(document.getElementById('printArea').innerHTML)"> 출력하기 </div>
 
 
 

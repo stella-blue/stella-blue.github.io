@@ -1,0 +1,599 @@
+<html>
+  <head>
+    <title>x로부터.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  </head>
+  <script>
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                   TAB                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+    $(document).ready(function(){  
+      $('ul.tabs li').click(function(){
+        var tab_id = $(this).attr('data-tab');
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+      })
+    })
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                   IMG                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+    let result = {
+      first: 0,
+      second: 0,
+      third: 0,
+      fourth: 0,
+    }
+    let resultID = {
+      first: 'a',
+      second: 'a',
+      third: 'a',
+      fourth: 'a',
+    }
+    //document.getElementById("tabelem-1-1").onclick = function() {};
+    function doAction(a, b){
+      var base = "'./images/tb/tabelem-";
+      var base2 = "<div class = 'inside-wrap'><img src = ";
+      var base3 = "'><img src = './images/xbutton.png' alt='삭제하기' style='width: auto; height: 20px;'></div></div>";
+
+      if(a==1){
+        var temp = base.concat("1-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png'");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(1)");
+        var final3 = temp4.concat(base3);
+        document.getElementById('first').innerHTML= final3;
+        result.first = b;
+        temp = 'tabelem-1-';
+        temp2 = temp.concat(b);
+        if(resultID.first != 'a'){document.getElementById(resultID.first).style.color = '#fff';};
+        document.getElementById(temp2).style.color = '#808080';
+        resultID.first = temp2;
+      }
+      if(a==2){
+        var temp = base.concat("2-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png'");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(2)");
+        var final3 = temp4.concat(base3);
+        document.getElementById('second').innerHTML= final3;
+        result.second = b;
+        temp = 'tabelem-2-';
+        temp2 = temp.concat(b);
+        if(resultID.second != 'a'){document.getElementById(resultID.second).style.color = '#fff';};
+        document.getElementById(temp2).style.color = '#808080';
+        resultID.second = temp2;
+      }
+      if(a==3){
+        var temp = base.concat("3-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png'");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(3)");
+        var final3 = temp4.concat(base3);
+        document.getElementById('third').innerHTML= final3;
+        result.third = b;
+        temp = 'tabelem-3-';
+        temp2 = temp.concat(b);
+        if(resultID.third != 'a'){document.getElementById(resultID.third).style.color = '#fff';};
+        document.getElementById(temp2).style.color = '#808080';
+        resultID.third = temp2;
+      }
+      if(a==4){
+        var temp = base.concat("4-");
+        var temp2 = temp.concat(b);
+        var filename = temp2.concat(".png'");
+
+        var temp3 = base2.concat(filename);
+        var final = temp3.concat(">");
+
+        var temp4 = final.concat(" <div name = 'removebutton' class = 'inside-text' onclick='removeAction(4)");
+        var final3 = temp4.concat(base3);
+        document.getElementById('fourth').innerHTML= final3;
+        result.fourth = b;
+        temp = 'tabelem-4-';
+        temp2 = temp.concat(b);
+        if(resultID.fourth != 'a'){document.getElementById(resultID.fourth).style.color = '#fff';};
+        document.getElementById(temp2).style.color = '#808080';
+        resultID.fourth = temp2;
+      }
+    }
+    function removeAction(a){
+      if(a==1){
+        document.getElementById('first').innerHTML="";
+        result.first = 0;
+        document.getElementById(resultID.first).style.color = 'white';
+        resultID.first = 'a';
+      }
+      if(a==2){
+        document.getElementById('second').innerHTML="";
+        result.second = 0;
+        document.getElementById(resultID.second).style.color = 'white';
+        resultID.second = 'a';
+      }
+      if(a==3){
+        document.getElementById('third').innerHTML="";
+        result.third = 0;
+        document.getElementById(resultID.third).style.color = 'white';
+        resultID.third = 'a';
+      }
+      if(a==4){
+        document.getElementById('fourth').innerHTML="";
+        result.fourth = 0;
+        document.getElementById(resultID.fourth).style.color = 'white';
+        resultID.fourth = 'a';
+      }
+    }
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                 PRINT                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+    function print(printArea){
+      win = window.open();
+      self.focus();
+      win.document.open();
+      win.document.write('<html><head><title>완성!</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><link rel="icon" href="favicon.ico" type="image/x-icon"><style>');
+      win.document.write('body, td {font-family: Verdana; font-size: 10pt; -webkit-print-color-adjust:exact; }\n');
+      win.document.write('@font-face {font-family: Yeongdo; src: url("./fonts/Yeongdo.ttf");}\n .top{font-family: Yeongdo; width: 100%; height: 60px; background: #000; color: #fff; text-align: left;}\n');
+      win.document.write('.printable{text-align: left; width: 583px; height: 825px; background-image: url("./images/print_base.png"); background-position: center; background-size: 100%; display: inline-block;}\n');
+      win.document.write('.printquad{width: 80%; height:19%; margin: 1% 10% 1% 10%; display: inline-block;}\n');
+      win.document.write('.printquad img{max-width: 100%; max-height: 19%; height: 100%; width: auto; display: inline-block;}\n');
+      win.document.write('.hide {padding-top: 80px; padding-bottom: 80px; color: #fff;}\n');
+      win.document.write('.hide2 {text-align: center;}\n');
+      win.document.write('@media print{.top {display: none;}\n.hide {display: none;}\n.printable{margin: 0;}\n.hide2 {margin: 0;}\n}\n');
+      win.document.write('a:link {color: #fff; text-decoration: none;} \n a:visited {color: #fff; text-decoration: none;} \n a:hover {color: #fff; text-decoration: none;} \n a:active {color: #fff; text-decoration: none;} \n');
+      win.document.write('</style></head><body style = "margin: 0; background: #000;">');
+      win.document.write('<div class = "top"><a href="./home.html" style="float: right; margin-top: 20px; margin-right: 20px; font-size: 20px;">처음으로</a><a href="./home.html" style="float: right;"><img src = "./images/tohome.png" alt="홈으로" style="width: auto; height: 90%; margin-top: 5px"></a><a href="./content.html" style="float: left;"><img src = "./images/turnback.png" alt="뒤로가기" style="width: auto; height: 90%; margin-top: 5px"></a></div>');
+      win.document.write('<div class="hide2">');
+      win.document.write('<div class = "hide" style="padding-top: 40px"><span style="font-size: 40px; font-family: Yoon340; font-weight: bold; cursor: pointer;">완성!</span></div>');
+      win.document.write(printArea);
+      win.document.write('<div class = "hide"><span style="cursor: pointer;" onclick = "window.print()"><img src = "./images/print.png" alt="인쇄하기" style="height:60px ; width: auto;"></span></div></div>');
+      remtxt = win.document.getElementsByName('removebutton');
+      var step = 0;
+      for(step = 0; step<4; step++){
+        remtxt[step].innerHTML = "";
+      }
+      win.document.write('</body></html>');
+
+      win.document.close();
+      //window.onload = win.print();
+      //win.close();
+    }
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                   END                   ///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+  </script>
+  <style>
+    @font-face {
+      font-family: Yoon330;
+      src: url('./fonts/Yoon330.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: Yoon340;
+      src: url('./fonts/Yoon340.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: Yeongdo;
+      src: url('./fonts/Yeongdo.ttf') format('truetype');
+    }
+    .top{
+      font-family: Yeongdo;
+      width: 100%;
+      height: 60px;
+      background: #000;
+      color: #fff;
+      text-align: left;
+      /*padding-top: 10px;*/
+    }
+    @font-face {
+      font-family: Cafe24Oneprettynight;
+      src: url(Cafe24Oneprettynight.ttf);
+    }
+    .fullscreen{
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .partition{
+      width: 60%;
+      height: 100%;
+      margin-right: 0px;
+      margin-left: 0px;
+      text-align: center;
+      float: left;
+    }
+    .printable{
+      text-align: center;
+      margin-top: 70px;
+      margin-left: 25%;
+      background-image: url('./images/print_base.png');
+      background-position: center;
+      background-size: 100%;
+      width: 583px;
+      height: 827px;
+      border: 1px solid #999;
+      box-shadow: 3px 3px 3px gray;
+      display: inline-block;
+    }
+    .printquad{
+      width: 80%;
+      height:19%;
+      margin: 1% 10% 1% 10%;
+      border: 2px solid #0ff;
+      text-align: left;
+      display: inline-block;
+    }
+    .printquad img{
+      max-width: 100%;
+      max-height: 19%;
+      height: 100%;
+      width: auto;
+      /*height: auto;*/
+      display: inline-block;
+    }
+    .sidebar{
+      width: 320px;
+      height: 100%;
+      margin: 0 auto;
+      background: #000;
+      color: #fff;
+      float: left;
+      text-align: center;
+      
+    }
+    ul.tabs{
+      margin:0px;
+      padding:0px;
+      list-style:none;
+    }
+    ul.tabs li{
+      font-family: Yoon340;
+      font-weight: normal;
+      font-size: 13pt;
+      width: 60px;
+      text-align: center;
+      background: #f5f5f5;
+      color: #000;
+      display: inline-block;
+      padding: 10px;
+      margin: 0 auto;
+      cursor: pointer;
+      float:left;
+    }
+    ul.tabs li.current{
+      font-family: Yoon340;
+      font-weight: normal;
+      /*width:25%;*/
+      text-align: center;
+      background: #000;
+      color: #fff;
+    }
+
+    .tab-content{
+      font-family: Yoon340;
+      font-weight: normal;
+      font-size: 11pt;
+      display:none;
+      height: 90%;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      line-height: 200%;
+      padding: 0px;
+      margin-right: 5px;
+      margin-top: 5px;
+      margin-left: 0px;
+      overflow:auto;
+    }
+    .tab-content.current{
+      display: inherit;
+      overflow:auto;
+    }
+
+    .tab-content::-webkit-scrollbar {
+      width: 5px;  /* 스크롤바의 너비 */
+    }
+    .tab-content::-webkit-scrollbar-thumb {
+      height: auto;
+      background: #fff; /* 스크롤바의 색상 */
+      border-radius: 5px;
+    }
+    .tab-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, .0);  /*스크롤바 뒷 배경 색상*/
+    }
+
+    .inside-wrap{
+        position: relative;
+    }
+
+    .inside-text {
+        text-align: right;
+        position: absolute;
+        top: 6%;
+        right: 2%;
+        cursor: pointer;
+    }
+
+    .select{
+      cursor: pointer;
+    }
+    a:link {color: #fff; text-decoration: none;}
+    a:visited {color: #fff; text-decoration: none;}
+    a:hover {color: #fff; text-decoration: none;}
+    a:active {color: #fff; text-decoration: none;}
+    h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }
+  </style>
+  <body style = "margin: 0; background: #f5f5f5;">
+    <div class = "top">
+      <a href="./home.html" style="float: right; margin-top: 20px; margin-right: 20px; font-size: 20px;">처음으로</a>
+      <a href="./home.html" style="float: right;"><img src = "./images/tohome.png" alt="홈으로" style="width: auto; height: 90%; margin-top: 5px"></a>
+      <a href="./intro.html" style="float: left;"><img src = "./images/turnback.png" alt="뒤로가기" style="width: auto; height: 90%; margin-top: 5px"></a>
+    </div>
+    <div class = "sidebar">
+      <ul class = "tabs">
+        <li class="tab-link current" data-tab="tab-1">언제</li>
+        <li class="tab-link" data-tab="tab-2">어디서</li>
+        <li class="tab-link" data-tab="tab-3">누구와</li>
+        <li class="tab-link" data-tab="tab-4">감정</li>
+      </ul>
+      <div style="clear: both;"></div>
+      <div id="tab-1" class="tab-content current">
+      <div style="padding: 20px">
+        <span id="tabelem-1-1" class="select" onclick="doAction(1, 1)">1월에</br></span>
+        <span id="tabelem-1-2" class="select" onclick="doAction(1, 2)">2월에</br></span>
+        <span id="tabelem-1-3" class="select" onclick="doAction(1, 3)">3월에</br></span>
+        <span id="tabelem-1-4" class="select" onclick="doAction(1, 4)">4월에</br></span>
+        <span id="tabelem-1-5" class="select" onclick="doAction(1, 5)">5월에</br></span>
+        <span id="tabelem-1-6" class="select" onclick="doAction(1, 6)">6월에</br></span>
+        <span id="tabelem-1-7" class="select" onclick="doAction(1, 7)">7월에</br></span>
+        <span id="tabelem-1-8" class="select" onclick="doAction(1, 8)">8월에</br></span>
+        <span id="tabelem-1-9" class="select" onclick="doAction(1, 9)">9월에</br></span>
+        <span id="tabelem-1-10" class="select" onclick="doAction(1, 10)">10월에</br></span>
+        <span id="tabelem-1-11" class="select" onclick="doAction(1, 11)">11월에</br></span>
+        <span id="tabelem-1-12" class="select" onclick="doAction(1, 12)">12월에</br></span>
+        <span id="tabelem-1-13" class="select" onclick="doAction(1, 13)">가을에</br></span>
+        <span id="tabelem-1-14" class="select" onclick="doAction(1, 14)"></br></span>
+        <span id="tabelem-1-15" class="select" onclick="doAction(1, 15)">공휴일에</br></span>
+        <span id="tabelem-1-16" class="select" onclick="doAction(1, 16)">과제중에</br></span>
+        <span id="tabelem-1-17" class="select" onclick="doAction(1, 17)">기념일에</br></span>
+        <span id="tabelem-1-18" class="select" onclick="doAction(1, 18)">내 생일에</br></span>
+        <span id="tabelem-1-19" class="select" onclick="doAction(1, 19)">눈 오는 날</br></span>
+        <span id="tabelem-1-20" class="select" onclick="doAction(1, 20)">면접때</br></span>
+        <span id="tabelem-1-21" class="select" onclick="doAction(1, 21)"></br></span>
+        <span id="tabelem-1-22" class="select" onclick="doAction(1, 22)">몇달전</br></span>
+        <span id="tabelem-1-23" class="select" onclick="doAction(1, 23)">바람부는날</br></span>
+        <span id="tabelem-1-24" class="select" onclick="doAction(1, 24)">밤에</br></span>
+        <span id="tabelem-1-25" class="select" onclick="doAction(1, 25)">방학에</br></span>
+        <span id="tabelem-1-26" class="select" onclick="doAction(1, 26)">봄에</br></span>
+        <span id="tabelem-1-27" class="select" onclick="doAction(1, 27)">비오는날</br></span>
+        <span id="tabelem-1-28" class="select" onclick="doAction(1, 28)">새벽에</br></span>
+        <span id="tabelem-1-29" class="select" onclick="doAction(1, 29)">설날에</br></span>
+        <span id="tabelem-1-30" class="select" onclick="doAction(1, 30)">수업시간에</br></span>
+        <span id="tabelem-1-31" class="select" onclick="doAction(1, 31)">시험기간에</br></span>
+        <span id="tabelem-1-32" class="select" onclick="doAction(1, 32)">신입때</br></span>
+        <span id="tabelem-1-33" class="select" onclick="doAction(1, 33)">아침에</br></span>
+        <span id="tabelem-1-34" class="select" onclick="doAction(1, 34)">알바할 때</br></span>
+        <span id="tabelem-1-35" class="select" onclick="doAction(1, 35)">어린시절</br></span>
+        <span id="tabelem-1-36" class="select" onclick="doAction(1, 36)">어제</br></span>
+        <span id="tabelem-1-37" class="select" onclick="doAction(1, 37)">연애초</br></span>
+        <span id="tabelem-1-38" class="select" onclick="doAction(1, 38)">오늘</br></span>
+        <span id="tabelem-1-39" class="select" onclick="doAction(1, 39)"></br></span>
+        <span id="tabelem-1-40" class="select" onclick="doAction(1, 40)">작년에</br></span>
+        <span id="tabelem-1-41" class="select" onclick="doAction(1, 41)">장마철에</br></span>
+        <span id="tabelem-1-42" class="select" onclick="doAction(1, 42)">저녁에</br></span>
+        <span id="tabelem-1-43" class="select" onclick="doAction(1, 43)">점심에</br></span>
+        <span id="tabelem-1-44" class="select" onclick="doAction(1, 44)">주말에</br></span>
+        <span id="tabelem-1-45" class="select" onclick="doAction(1, 45)">중학생때</br></span>
+        <span id="tabelem-1-46" class="select" onclick="doAction(1, 46)"></br></span>
+        <span id="tabelem-1-47" class="select" onclick="doAction(1, 47)">추석에</br></span>
+        <span id="tabelem-1-48" class="select" onclick="doAction(1, 48)">축제때</br></span>
+        <span id="tabelem-1-49" class="select" onclick="doAction(1, 49)">크리스마스때</br></span>
+        <span id="tabelem-1-50" class="select" onclick="doAction(1, 50)">학기중에</br></span>
+        <span id="tabelem-1-51" class="select" onclick="doAction(1, 51)">학기초에</br></span>
+        <span id="tabelem-1-52" class="select" onclick="doAction(1, 52)">학창시절에</br></span>
+        <span id="tabelem-1-53" class="select" onclick="doAction(1, 53)">한달전</br></span>
+        <span id="tabelem-1-54" class="select" onclick="doAction(1, 54)">한겨울에</br></span>
+        <span id="tabelem-1-55" class="select" onclick="doAction(1, 55)">한여름에</br></span>
+        <span id="tabelem-1-56" class="select" onclick="doAction(1, 56)">할로윈에</br></span>
+        <span id="tabelem-1-57" class="select" onclick="doAction(1, 57)">화창한날</br></span>
+        <span id="tabelem-1-58" class="select" onclick="doAction(1, 58)">흐린날</br></span>
+        <span id="tabelem-1-59" class="select" onclick="doAction(1, 59)">MT때</br></span>
+      </div>
+      </div>
+
+      <div id="tab-2" class="tab-content">
+      <div style="padding: 20px">
+        <span id="tabelem-2-1" class="select" onclick="doAction(2, 1)">가게에서</br></span>
+        <span id="tabelem-2-2" class="select" onclick="doAction(2, 2)">강의실에서</br></span>
+        <span id="tabelem-2-3" class="select" onclick="doAction(2, 3)">거리에서</br></span>
+        <span id="tabelem-2-4" class="select" onclick="doAction(2, 4)">경기장에서</br></span>
+        <span id="tabelem-2-5" class="select" onclick="doAction(2, 5)">계곡에서</br></span>
+        <span id="tabelem-2-6" class="select" onclick="doAction(2, 6)">공방에서</br></span>
+        <span id="tabelem-2-7" class="select" onclick="doAction(2, 7)">공연장에서</br></span>
+        <span id="tabelem-2-8" class="select" onclick="doAction(2, 8)">공원에서</br></span>
+        <span id="tabelem-2-9" class="select" onclick="doAction(2, 9)">공항에서</br></span>
+        <span id="tabelem-2-10" class="select" onclick="doAction(2, 10)">과실에서</br></span>
+        <span id="tabelem-2-11" class="select" onclick="doAction(2, 11)">교실에서</br></span>
+        <span id="tabelem-2-12" class="select" onclick="doAction(2, 12)">기차에서</br></span>
+        <span id="tabelem-2-13" class="select" onclick="doAction(2, 13)">노래방에서</br></span>
+        <span id="tabelem-2-14" class="select" onclick="doAction(2, 14)">녹음실에서</br></span>
+        <span id="tabelem-2-15" class="select" onclick="doAction(2, 15)">놀이공원에서</br></span>
+        <span id="tabelem-2-16" class="select" onclick="doAction(2, 16)"></br></span>
+        <span id="tabelem-2-17" class="select" onclick="doAction(2, 17)">도서관에서</br></span>
+        <span id="tabelem-2-18" class="select" onclick="doAction(2, 18)">동네에서</br></span>
+        <span id="tabelem-2-19" class="select" onclick="doAction(2, 19)"></br></span>
+        <span id="tabelem-2-20" class="select" onclick="doAction(2, 20)">버스에서</br></span>
+        <span id="tabelem-2-21" class="select" onclick="doAction(2, 21)">비행기에서</br></span>
+        <span id="tabelem-2-22" class="select" onclick="doAction(2, 22)">사진관에서</br></span>
+        <span id="tabelem-2-23" class="select" onclick="doAction(2, 23)">산에서</br></span>
+        <span id="tabelem-2-24" class="select" onclick="doAction(2, 24)">수영장에서</br></span>
+        <span id="tabelem-2-25" class="select" onclick="doAction(2, 25)">술집에서</br></span>
+        <span id="tabelem-2-26" class="select" onclick="doAction(2, 26)"></br></span>
+        <span id="tabelem-2-27" class="select" onclick="doAction(2, 27)">여행지에서</br></span>
+        <span id="tabelem-2-28" class="select" onclick="doAction(2, 28)">영화관에서</br></span>
+        <span id="tabelem-2-29" class="select" onclick="doAction(2, 29)">오락실에서</br></span>
+        <span id="tabelem-2-30" class="select" onclick="doAction(2, 30)">온라인에서</br></span>
+        <span id="tabelem-2-31" class="select" onclick="doAction(2, 31)">자취방에서</br></span>
+        <span id="tabelem-2-32" class="select" onclick="doAction(2, 32)">작업실에서</br></span>
+        <span id="tabelem-2-33" class="select" onclick="doAction(2, 33)">전시회에서</br></span>
+        <span id="tabelem-2-34" class="select" onclick="doAction(2, 34)">지하철에서</br></span>
+        <span id="tabelem-2-35" class="select" onclick="doAction(2, 35)">집에서</br></span>
+        <span id="tabelem-2-36" class="select" onclick="doAction(2, 36)">찜질방에서</br></span>
+        <span id="tabelem-2-37" class="select" onclick="doAction(2, 37)">친척집에서</br></span>
+        <span id="tabelem-2-38" class="select" onclick="doAction(2, 38)">카페에서</br></span>
+        <span id="tabelem-2-39" class="select" onclick="doAction(2, 39)">파티룸에서</br></span>
+        <span id="tabelem-2-40" class="select" onclick="doAction(2, 40)">포장마차에서</br></span>
+        <span id="tabelem-2-41" class="select" onclick="doAction(2, 41)">피씨방에서</br></span>
+        <span id="tabelem-2-42" class="select" onclick="doAction(2, 42)"></br></span>
+        <span id="tabelem-2-43" class="select" onclick="doAction(2, 43)">학원에서</br></span>
+        <span id="tabelem-2-44" class="select" onclick="doAction(2, 44)">할머니댁에서</br></span>
+        <span id="tabelem-2-45" class="select" onclick="doAction(2, 45)"></br></span>
+        <span id="tabelem-2-46" class="select" onclick="doAction(2, 46)">헬스장에서</br></span>
+        <span id="tabelem-2-47" class="select" onclick="doAction(2, 47)">화장실에서</br></span>
+        <span id="tabelem-2-48" class="select" onclick="doAction(2, 48)">회사에서</br></span>
+      </div>
+      </div>
+      <div id="tab-3" class="tab-content">
+      <div style="padding: 20px">
+        <span id="tabelem-3-1" class="select" onclick="doAction(3, 1)">가족과</br></span>
+        <span id="tabelem-3-2" class="select" onclick="doAction(3, 2)">강아지와</br></span>
+        <span id="tabelem-3-3" class="select" onclick="doAction(3, 3)">고양이와</br></span>
+        <span id="tabelem-3-4" class="select" onclick="doAction(3, 4)">교수님과</br></span>
+        <span id="tabelem-3-5" class="select" onclick="doAction(3, 5)">나혼자</br></span>
+        <span id="tabelem-3-6" class="select" onclick="doAction(3, 6)">남자친구와</br></span>
+        <span id="tabelem-3-7" class="select" onclick="doAction(3, 7)">낯선사람과</br></span>
+        <span id="tabelem-3-8" class="select" onclick="doAction(3, 8)">누나와</br></span>
+        <span id="tabelem-3-9" class="select" onclick="doAction(3, 9)">동기와</br></span>
+        <span id="tabelem-3-10" class="select" onclick="doAction(3, 10)">동료과</br></span>
+        <span id="tabelem-3-11" class="select" onclick="doAction(3, 11)">동생과</br></span>
+        <span id="tabelem-3-12" class="select" onclick="doAction(3, 12)">동창과</br></span>
+        <span id="tabelem-3-13" class="select" onclick="doAction(3, 13)">반려동물과</br></span>
+        <span id="tabelem-3-14" class="select" onclick="doAction(3, 14)">부모님과</br></span>
+        <span id="tabelem-3-15" class="select" onclick="doAction(3, 15)">사장님과</br></span>
+        <span id="tabelem-3-16" class="select" onclick="doAction(3, 16)">상사와</br></span>
+        <span id="tabelem-3-17" class="select" onclick="doAction(3, 17)">선배와</br></span>
+        <span id="tabelem-3-18" class="select" onclick="doAction(3, 18)">선생님과</br></span>
+        <span id="tabelem-3-19" class="select" onclick="doAction(3, 19)">소개팅상대와</br></span>
+        <span id="tabelem-3-20" class="select" onclick="doAction(3, 20)">썸남과</br></span>
+        <span id="tabelem-3-21" class="select" onclick="doAction(3, 21)">썸녀와</br></span>
+        <span id="tabelem-3-22" class="select" onclick="doAction(3, 22)">아빠와</br></span>
+        <span id="tabelem-3-23" class="select" onclick="doAction(3, 23)">애인과</br></span>
+        <span id="tabelem-3-24" class="select" onclick="doAction(3, 24)">언니와</br></span>
+        <span id="tabelem-3-25" class="select" onclick="doAction(3, 25)">엄마와</br></span>
+        <span id="tabelem-3-26" class="select" onclick="doAction(3, 26)">여자친구와</br></span>
+        <span id="tabelem-3-27" class="select" onclick="doAction(3, 27)">연예인과</br></span>
+        <span id="tabelem-3-28" class="select" onclick="doAction(3, 28)">옛친구와</br></span>
+        <span id="tabelem-3-29" class="select" onclick="doAction(3, 29)">오빠와</br></span>
+        <span id="tabelem-3-30" class="select" onclick="doAction(3, 30)">온라인친구와</br></span>
+        <span id="tabelem-3-31" class="select" onclick="doAction(3, 31)">전애인과</br></span>
+        <span id="tabelem-3-32" class="select" onclick="doAction(3, 32)">지인과</br></span>
+        <span id="tabelem-3-33" class="select" onclick="doAction(3, 33)">최애와</br></span>
+        <span id="tabelem-3-34" class="select" onclick="doAction(3, 34)">친구와</br></span>
+        <span id="tabelem-3-35" class="select" onclick="doAction(3, 35)">친척과</br></span>
+        <span id="tabelem-3-36" class="select" onclick="doAction(3, 36)">할머니와</br></span>
+        <span id="tabelem-3-37" class="select" onclick="doAction(3, 37)">할아버지와</br></span>
+        <span id="tabelem-3-38" class="select" onclick="doAction(3, 38)">형과</br></span>
+        <span id="tabelem-3-39" class="select" onclick="doAction(3, 39)">회원들과</br></span>
+        <span id="tabelem-3-40" class="select" onclick="doAction(3, 40)">후배와</br></span>
+      </div>
+      </div>
+      <div id="tab-4" class="tab-content">
+      <div style="padding: 20px">
+        <span id="tabelem-4-1" class="select" onclick="doAction(4, 1)">감동했다</br></span>
+        <span id="tabelem-4-2" class="select" onclick="doAction(4, 2)">거북했다</br></span>
+        <span id="tabelem-4-3" class="select" onclick="doAction(4, 3)">고마웠다</br></span>
+        <span id="tabelem-4-4" class="select" onclick="doAction(4, 4)">공허했다</br></span>
+        <span id="tabelem-4-5" class="select" onclick="doAction(4, 5)">괴로웠다</br></span>
+        <span id="tabelem-4-6" class="select" onclick="doAction(4, 6)">기뻤다</br></span>
+        <span id="tabelem-4-7" class="select" onclick="doAction(4, 7)">긴장했다</br></span>
+        <span id="tabelem-4-8" class="select" onclick="doAction(4, 8)">꿀꿀했다</br></span>
+        <span id="tabelem-4-9" class="select" onclick="doAction(4, 9)">놀랐다</br></span>
+        <span id="tabelem-4-10" class="select" onclick="doAction(4, 10)">달콤했다</br></span>
+        <span id="tabelem-4-11" class="select" onclick="doAction(4, 11)">두근거렸다</br></span>
+        <span id="tabelem-4-12" class="select" onclick="doAction(4, 12)">든든했다</br></span>
+        <span id="tabelem-4-13" class="select" onclick="doAction(4, 13)">들떴다</br></span>
+        <span id="tabelem-4-14" class="select" onclick="doAction(4, 14)">따뜻했다</br></span>
+        <span id="tabelem-4-15" class="select" onclick="doAction(4, 15)">떨렸다</br></span>
+        <span id="tabelem-4-16" class="select" onclick="doAction(4, 16)">만족했다</br></span>
+        <span id="tabelem-4-17" class="select" onclick="doAction(4, 17)">무서웠다</br></span>
+        <span id="tabelem-4-18" class="select" onclick="doAction(4, 18)">미안했다</br></span>
+        <span id="tabelem-4-19" class="select" onclick="doAction(4, 19)"></br></span>
+        <span id="tabelem-4-20" class="select" onclick="doAction(4, 20)">벅찼다</br></span>
+        <span id="tabelem-4-21" class="select" onclick="doAction(4, 21)">부러웠다</br></span>
+        <span id="tabelem-4-22" class="select" onclick="doAction(4, 22)">불안했다</br></span>
+        <span id="tabelem-4-23" class="select" onclick="doAction(4, 23)">불쾌했다</br></span>
+        <span id="tabelem-4-24" class="select" onclick="doAction(4, 24)">비참했다</br></span>
+        <span id="tabelem-4-25" class="select" onclick="doAction(4, 25)">뿌듯했다</br></span>
+        <span id="tabelem-4-26" class="select" onclick="doAction(4, 26)">서러웠다</br></span>
+        <span id="tabelem-4-27" class="select" onclick="doAction(4, 27)"></br></span>
+        <span id="tabelem-4-28" class="select" onclick="doAction(4, 28)">설렜다</br></span>
+        <span id="tabelem-4-29" class="select" onclick="doAction(4, 29)">성가셨다</br></span>
+        <span id="tabelem-4-30" class="select" onclick="doAction(4, 30)">속상했다</br></span>
+        <span id="tabelem-4-31" class="select" onclick="doAction(4, 31)">슬펐다</br></span>
+        <span id="tabelem-4-32" class="select" onclick="doAction(4, 32)">신났다</br></span>
+        <span id="tabelem-4-33" class="select" onclick="doAction(4, 33)">실망했다</br></span>
+        <span id="tabelem-4-34" class="select" onclick="doAction(4, 34)">쓰라렸다</br></span>
+        <span id="tabelem-4-35" class="select" onclick="doAction(4, 35)">씁쓸했다</br></span>
+        <span id="tabelem-4-36" class="select" onclick="doAction(4, 36)"></br></span>
+        <span id="tabelem-4-37" class="select" onclick="doAction(4, 37)">우울했다</br></span>
+        <span id="tabelem-4-38" class="select" onclick="doAction(4, 38)">절망했다</br></span>
+        <span id="tabelem-4-39" class="select" onclick="doAction(4, 39)">좌절했다</br></span>
+        <span id="tabelem-4-40" class="select" onclick="doAction(4, 40)">즐거웠다</br></span>
+        <span id="tabelem-4-41" class="select" onclick="doAction(4, 41)">지루했다</br></span>
+        <span id="tabelem-4-42" class="select" onclick="doAction(4, 42)">짜릿했다</br></span>
+        <span id="tabelem-4-43" class="select" onclick="doAction(4, 43)">짜증났다</br></span>
+        <span id="tabelem-4-44" class="select" onclick="doAction(4, 44)">찝찝했다</br></span>
+        <span id="tabelem-4-45" class="select" onclick="doAction(4, 45)">철렁했다</br></span>
+        <span id="tabelem-4-46" class="select" onclick="doAction(4, 46)">초조했다</br></span>
+        <span id="tabelem-4-47" class="select" onclick="doAction(4, 47)">통쾌했다</br></span>
+        <span id="tabelem-4-48" class="select" onclick="doAction(4, 48)">편안했다</br></span>
+        <span id="tabelem-4-49" class="select" onclick="doAction(4, 49)">포근했다</br></span>
+        <span id="tabelem-4-50" class="select" onclick="doAction(4, 50)"></br></span>
+        <span id="tabelem-4-51" class="select" onclick="doAction(4, 51)">피곤했다</br></span>
+        <span id="tabelem-4-52" class="select" onclick="doAction(4, 52)">홀가분했다</br></span>
+        <span id="tabelem-4-53" class="select" onclick="doAction(4, 53)">화났다</br></span>
+        <span id="tabelem-4-54" class="select" onclick="doAction(4, 54)">황홀했다</br></span>
+        <span id="tabelem-4-55" class="select" onclick="doAction(4, 55)">후련했다</br></span>
+        <span id="tabelem-4-56" class="select" onclick="doAction(4, 56)">힘들었다</br></span>
+        <span id="tabelem-4-57" class="select" onclick="doAction(4, 57)">질투났다</br></span>
+      </div>
+      </div>
+    </div>
+    <div>
+    <div id = "printArea" class = "partition">
+      <div class = "printable"> 
+         <div style = "padding-bottom: 70px; display: inline-block;"></div>
+         <div id = "first" class = "printquad"></div> 
+         <div id = "second" class = "printquad"></div> 
+         <div id = "third" class = "printquad"></div> 
+         <div id = "fourth" class = "printquad"></div>
+         <div style = "margin-bottom: 70px; display: inline-block;"></div>
+         <!--div style = "text-align: left; padding-left: 10px;"> Copyright 어쩌구저쩌구 </div--!>
+      </div>
+    </div>    
+    </div> 
+
+    <div style="margin-left: 20px; margin-top: 700px; float: left;">
+      <div class="select" onclick="window.location.reload()"><img src = "./images/reset.png" alt="초기화" style="height:60px ; width: auto;"></div>
+      <div class="select" onclick="print(document.getElementById('printArea').innerHTML)"><img src = "./images/done.png" alt="완성하기" style="height:60px ; width: auto;"></div>
+    </div>
+
+
+  </body>
+
+</html>
