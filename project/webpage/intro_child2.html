@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>x로부터.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+  <script>
+  ///////////////////////////// scrollfadein
+  $(document).ready(function() {
+    $(window).scroll( function(){
+        var b11 = $('#hideme1').offset().top + $('#hideme1').outerHeight();
+        var h1 = $('#hideme1').outerHeight();
+        var b12 = $(window).scrollTop() + screen.height;
+        var b21 = $('#hideme2').offset().top + $('#hideme2').outerHeight();
+        var h2 = $('#hideme2').outerHeight();
+        var b22 = $(window).scrollTop() + screen.height;
+        var b31 = $('#hideme3').offset().top + $('#hideme3').outerHeight();
+        var b32 = $(window).scrollTop() + screen.height;
+        var h3 = $('#hideme3').outerHeight();
+
+        if( b11 < b12 ){
+          $('#hideme1').animate({'opacity':'1'},500);
+        }
+        if( b21 < b22 ){
+          $('#hideme2').animate({'opacity':'1'},500);
+        }
+        if( b31 < b32 ){
+          $('#hideme3').animate({'opacity':'1'},500);
+        }
+    });
+  });
+
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
+    @font-face {
+      font-family: Yeongdo;
+      src: url('./fonts/Yeongdo.ttf');
+    }
+    .top{
+      font-family: Yeongdo;
+      width: 100%;
+      height: 60px;
+      background: #000;
+      color: #fff;
+      text-align: left;
+      /*padding-top: 10px;*/
+    }
+    .title{
+      font-family: 'Noto Sans KR';
+      font-weight: 700;
+      text-align: center;
+      font-size: 70px;
+      margin-top: 150px;
+      margin-bottom: 90px;
+      line-height: 100%;
+      animation: fadein 2s;
+    }
+    @keyframes fadein{
+      from{opacity: 0;}
+      to{opacity: 1;}
+    }
+    .pbody{
+      font-family: 'Noto Sans KR';
+      font-weight: 300;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 80px;
+    }
+    .hideme {
+      opacity: 0;
+      font-size: 100px;
+      text-align: center;
+    }
+
+    a:link {color: #fff; text-decoration: none;}
+    a:visited {color: #fff; text-decoration: none;}
+    a:hover {color: #fff; text-decoration: none;}
+    a:active {color: #fff; text-decoration: none;}
+  </style>
+  <body style = "margin: 0; background: #f5f5f5;">
+    <div class = "top">
+      <a href="./index.html" style="float: right; margin-top: 20px; margin-right: 20px; font-size: 20px;">처음으로</a>
+      <a href="./index.html" style="float: right;"><img src = "./images/tohome.png" alt="처음으로" style="width: auto; height: 90%; margin-top: 5px"></a>
+    </div>
+    <div id = "moving" class = "title">
+      <!--span id = "movingtext"> X로부터 </span-->
+       <img src="./images/fromxtitle.png" alt="x로부터" style="height: auto ; width: 30%; min-width: 300px">
+    </div>
+    <div class = "pbody"> <img src="./images/explanation.png" alt="활동 설명" style="height: auto ; width: 40%; min-width: 400px"> </div>
+    <div style="display: block; padding-bottom: 85px;text-align: center;"></div>
+
+    <div id = "hideme1" class="hideme">웹페이지를<br>스크롤하면</div>
+    <div id = "hideme2" class="hideme">요소들이뜨게<br>해놨으니까ㅇ</div>
+    <div id = "hideme3" class="hideme">이미지<br>좀주세요</div>
+
+    <!--div style = "margin-bottom: 1000px"></div-->
+    <div style="text-align: center; margin-bottom: 100px;"><a href="./content.html" style=""><img src = "./images/start.png" alt="시작하기" style="height:80px ; width: auto;"></a></div>
+
+
+  </body>
+</html>
