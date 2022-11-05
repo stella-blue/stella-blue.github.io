@@ -168,10 +168,10 @@
       win.document.write('</style></head><body style = "margin: 0; background: #000;">');
       win.document.write('<div class = "top"><a href="./index.html" style="float: right; margin-top: 20px; margin-right: 20px; font-size: 20px;">처음으로</a><a href="./index.html" style="float: right;"><img src = "./images/tohome.png" alt="홈으로" style="width: auto; height: 90%; margin-top: 5px"></a><a href="./content.html" style="float: left;"><img src = "./images/turnback.png" alt="뒤로가기" style="width: auto; height: 90%; margin-top: 5px"></a></div>');
       win.document.write('<div class="hide2">');
-      win.document.write('<div class = "hide" style="padding-top: 40px;"><span style="font-size: 40px; font-family: \'Noto Sans KR\'; font-weight: 700;">완성!</span></div>');
+      win.document.write('<div class = "hide" style="padding-top: 40px;"><span style="font-size: 40px; font-family: \'Noto Sans KR\'; font-weight: 700;"><img src = "./images/complete2.png" alt="완성!" style="height: auto ; width: 10%; min-width: 300px"></span></div>');
       win.document.write(printAreaPadding);
 //      win.document.write("<div style='color: white; cursor: pointer; display: inline-block;'><a href='javascript:void(0);' style='color: white;' onclick=\"printDiv($('#printArea'));\">이미지로 저장</a></div>");
-      win.document.write('<div class = "hide"><span style="cursor: pointer; display: inline-block;" onclick = "window.print()"><img src = "./images/print.png" alt="인쇄하기" style="height:60px ; width: auto;"></span></div></div>');
+      win.document.write('<div class = "hide"><span style="cursor: pointer; display: inline-block;" onclick = "window.print()"><img src = "./images/print.png" alt="인쇄하기" style="height:80px ; width: auto;"></span></div></div>');
       remtxt = win.document.getElementsByName('removebutton');
       var step = 0;
       for(step = 0; step<4; step++){
@@ -596,8 +596,8 @@
     </div> 
 
     <div style="margin-left: 20px; margin-top: 700px; float: left;">
-      <div class="select" onclick="print(document.getElementById('printAreaPadding').innerHTML)"><img src = "./images/done.png" alt="완성하기" style="height:60px ; width: auto;"></div>
-      <div class="select" onclick="window.location.reload()"><img src = "./images/reset.png" alt="초기화" style="height:60px ; width: auto;"></div>
+      <div class="select" onclick="print(document.getElementById('printAreaPadding').innerHTML)"><img src = "./images/done.png" alt="완성하기" style="height:80px ; width: auto;"></div>
+      <div class="select" onclick="window.location.reload()"><img src = "./images/reset.png" alt="초기화" style="height:80px ; width: auto;"></div>
     </div>
 
 
