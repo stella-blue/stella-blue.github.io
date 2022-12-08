@@ -3,4 +3,4 @@ layout: page
 title: MAIN
 ---
 
-Machinist Network (Ishgard)
+Nothing here yet.
