@@ -1,0 +1,33 @@
+I"�<script>
+  function jsMove(){
+    var baselink = "/secrets/help";
+    var pc = document.getElementById('passcode').value;
+    var temp = baselink.concat(pc);
+    window.open(temp.toLowerCase());
+  }
+</script>
+
+<div>
+힘들어죽을것같애<br />
+<span style="color: white">제목: 코끼리에 대해서 생각하지 마세요<br /></span>
+살려주세요<br />
+<span style="color: white">이 방송에서 순위는 아무것도 아니야<br /></span>
+숙제가 너무많아!!!!!!!!!!!!!!!!!!!!!<br />
+<span style="color: white">그냥 넘겨버려도 되는 요소이지<br /></span>
+내가 수업을 하나만 듣는거도아닌데 심지어 교과외활동도잇는데<br />
+<span style="color: white">인생은 영화가 아니니까<br /></span>
+ejr덕질만하기에도 힘든삶인데요선생님 ㅠㅠㅠㅠㅠㅠㅠㅠ<br />
+<span style="color: white">총을 끝까지 쏘지 않아도 돼<br /></span>
+하...<br />
+<span style="color: white">정말 중요한 것은 코끼리가 아니야<br /></span>
+<br />
+<br />
+형식: 영어 (9자)
+<br />
+<form autocomplete="off" onsubmit="jsMove();">
+  <input id="passcode" type="text" required="" /><br />
+  <br />
+  <input type="submit" value="꺆" />
+</form>
+</div>
+:ET

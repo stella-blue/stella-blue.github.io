@@ -1,0 +1,20 @@
+<script>
+  function jsMove(){
+    var baselink = "https://hahsy-hr.github.io/2021";
+    var tail = "bday/";
+    var pc = document.getElementById('passcode').value;
+    alert("접속을 시도합니다. 404에러가 났다면, 틀렸지롱!");
+    var temp = baselink.concat(pc);
+    window.open(temp.concat(tail));
+  }
+</script>
+
+<p>
+두구두구두구...<br />
+이 글을 보게 될 당신의 생일은&#63;&#33;<br />
+형식: 네 자리 숫자<br />
+  <form autocomplete="off" onsubmit="jsMove();">
+      <input id="passcode" type="text" required="" /><br /><br />
+      <input type="submit" value="제출합니다." />
+    </form>
+</p>
