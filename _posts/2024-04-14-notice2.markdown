@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 계정 이동의 변
-date: 2023-04-14
+date: 2024-04-14
 category: Report
 ---
 <p style="color:#999;">너의 지식은 살리아크의 강에서 퍼올린 일부에 불과할지니, <br>
