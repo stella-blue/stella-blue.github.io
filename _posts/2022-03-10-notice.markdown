@@ -33,3 +33,4 @@ category: Archive
 <br><a href = "/archive/2022/04/15/important.html"> 중요 공지 1 </a>
 <br><a href = "/archive/2022/08/22/important2.html"> 중요 공지 2 </a>
 <br><a href = "/report/2023/03/15/asdf.html"> 제작자 공지 </a>
+<br><a href = "/report/2024/04/14/notice2.html"> 계정 이동의 변 </a>
